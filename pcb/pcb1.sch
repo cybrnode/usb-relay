@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATtiny:ATtiny85-20PU U1
-U 1 1 6058B098
-P 2150 5250
-F 0 "U1" H 1621 5296 50  0000 R CNN
-F 1 "ATtiny85-20PU" H 1621 5205 50  0000 R CNN
-F 2 "Package_DIP:DIP-8_W7.62mm" H 2150 5250 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 2150 5250 50  0001 C CNN
-	1    2150 5250
-	1    0    0    -1  
-$EndComp
-$Comp
 L Transistor_BJT:BC547 Q2
 U 1 1 604B88A2
 P 6600 3450
@@ -133,16 +122,27 @@ F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 6900 1150 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6700 2550 6700 2650
+	6700 2550 6700 2600
 $Comp
 L Connector:Screw_Terminal_01x02 J1
 U 1 1 605097F3
-P 10000 1150
-F 0 "J1" H 10080 1142 50  0000 L CNN
-F 1 "Screw_Terminal_01x02" H 10080 1051 50  0000 L CNN
-F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10000 1150 50  0001 C CNN
-F 3 "~" H 10000 1150 50  0001 C CNN
-	1    10000 1150
+P 10100 1150
+F 0 "J1" H 10180 1142 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 10180 1051 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10100 1150 50  0001 C CNN
+F 3 "~" H 10100 1150 50  0001 C CNN
+	1    10100 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J2
+U 1 1 6050B345
+P 9900 2650
+F 0 "J2" H 9980 2642 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 9980 2551 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 9900 2650 50  0001 C CNN
+F 3 "~" H 9900 2650 50  0001 C CNN
+	1    9900 2650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -161,7 +161,7 @@ L Device:Crystal Y1
 U 1 1 605B405C
 P 1200 3750
 F 0 "Y1" H 1200 4018 50  0000 C CNN
-F 1 "Crystal" H 1200 3927 50  0000 C CNN
+F 1 "Crystal-12MHz" H 1200 3927 50  0000 C CNN
 F 2 "Crystal:Crystal_HC49-4H_Vertical" H 1200 3750 50  0001 C CNN
 F 3 "~" H 1200 3750 50  0001 C CNN
 	1    1200 3750
@@ -201,8 +201,6 @@ Connection ~ 1200 4150
 Wire Wire Line
 	1200 4150 850  4150
 Wire Wire Line
-	1400 1900 750  1900
-Wire Wire Line
 	750  1900 750  2800
 Wire Wire Line
 	750  4250 1200 4250
@@ -219,10 +217,6 @@ Connection ~ 850  3750
 Connection ~ 1050 3750
 Wire Wire Line
 	1050 3750 850  3750
-Wire Wire Line
-	2150 5850 750  5850
-Wire Wire Line
-	750  5850 750  4250
 Connection ~ 750  4250
 $Comp
 L Device:CP1 C3
@@ -247,8 +241,6 @@ Wire Wire Line
 Wire Wire Line
 	2000 2200 2400 2200
 Wire Wire Line
-	2150 4650 2150 4400
-Wire Wire Line
 	2400 1950 2400 2200
 Wire Wire Line
 	6700 3650 6700 3850
@@ -256,10 +248,6 @@ Wire Wire Line
 	6700 3850 5750 3850
 Wire Wire Line
 	6900 2200 6900 2350
-Wire Wire Line
-	2900 5250 2750 5250
-Wire Wire Line
-	2750 5350 3000 5350
 $Comp
 L Connector:Conn_01x08_Male J6
 U 1 1 605A5051
@@ -283,21 +271,18 @@ F 3 "~" H 3250 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2150 4400 3750 4400
-Wire Wire Line
-	3750 4400 3750 2350
-Wire Wire Line
 	3750 2350 3450 2350
 Wire Wire Line
 	3750 1950 3750 2350
-Wire Wire Line
-	3750 1950 2400 1950
-Connection ~ 3750 2350
 Wire Wire Line
 	1750 3300 850  3300
 Connection ~ 1200 4250
 Wire Wire Line
 	1200 4250 2850 4250
+Wire Wire Line
+	1550 3500 2000 3500
+Wire Wire Line
+	2000 3500 2000 3800
 Wire Wire Line
 	1750 4050 1750 3300
 Wire Wire Line
@@ -312,6 +297,8 @@ Wire Wire Line
 	2650 3550 2350 3550
 Wire Wire Line
 	2650 3800 2650 3550
+Wire Wire Line
+	2000 3800 2650 3800
 Wire Wire Line
 	2750 4050 1750 4050
 Wire Wire Line
@@ -333,34 +320,7 @@ Wire Wire Line
 Wire Wire Line
 	2350 3150 2700 3150
 Wire Wire Line
-	2900 3050 2350 3050
-Wire Wire Line
-	2900 5250 2900 3050
-Wire Wire Line
-	3000 2950 3000 5350
-Wire Wire Line
-	2350 2950 3000 2950
-Wire Wire Line
-	2850 2850 2850 4250
-Wire Wire Line
 	2350 2850 2850 2850
-$Comp
-L 74xx:74HC237 U2
-U 1 1 605E4E2C
-P 4000 5100
-F 0 "U2" H 4000 5881 50  0000 C CNN
-F 1 "74HC237" H 4000 5790 50  0000 C CNN
-F 2 "Package_DIP:DIP-16_W7.62mm" H 4000 5100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/cd74hc237.pdf" H 4000 5100 50  0001 C CNN
-	1    4000 5100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2750 5050 3250 5050
-Wire Wire Line
-	3250 5050 3250 4800
-Wire Wire Line
-	3250 4800 3600 4800
 Wire Wire Line
 	5750 3850 5750 2350
 Wire Wire Line
@@ -446,24 +406,6 @@ Wire Wire Line
 	6700 5050 6700 5250
 Wire Wire Line
 	6700 5250 5750 5250
-Wire Wire Line
-	5450 2000 4650 2000
-Wire Wire Line
-	4650 2000 4650 4800
-Wire Wire Line
-	4650 4800 4400 4800
-Wire Wire Line
-	4400 4900 4750 4900
-Wire Wire Line
-	4750 4900 4750 3450
-Wire Wire Line
-	4750 3450 5250 3450
-Wire Wire Line
-	5250 4850 4850 4850
-Wire Wire Line
-	4850 4850 4850 5000
-Wire Wire Line
-	4850 5000 4400 5000
 $Comp
 L Transistor_BJT:BC547 Q4
 U 1 1 6066B5D0
@@ -547,61 +489,9 @@ Wire Wire Line
 	5900 5300 6700 5300
 Connection ~ 5900 3950
 Wire Wire Line
-	4400 5100 5200 5100
-Wire Wire Line
-	5200 5100 5200 6200
-Wire Wire Line
-	5200 6200 5250 6200
-Wire Wire Line
 	6700 6600 5750 6600
-Wire Wire Line
-	2150 6600 2150 5850
-Connection ~ 2150 5850
-Wire Wire Line
-	4000 5600 4000 5850
-Wire Wire Line
-	4000 5850 3250 5850
-Wire Wire Line
-	3600 5300 3400 5300
-Wire Wire Line
-	3250 5300 3250 5850
-Connection ~ 3250 5850
-Wire Wire Line
-	3250 5850 2150 5850
-Wire Wire Line
-	4000 4500 4000 4100
-Wire Wire Line
-	4000 1950 3750 1950
-Wire Wire Line
-	3600 5400 3500 5400
-Wire Wire Line
-	3500 5400 3500 4100
-Wire Wire Line
-	3500 4100 4000 4100
-Connection ~ 4000 4100
-Wire Wire Line
-	4000 4100 4000 1950
-Wire Wire Line
-	3600 5100 3400 5100
-Wire Wire Line
-	3400 5100 3400 5300
-Connection ~ 3400 5300
-Wire Wire Line
-	3400 5300 3250 5300
 Text Label 8750 7500 0    79   ~ 0
-usb-relay-mux-attiny85
-Wire Wire Line
-	3600 4900 3100 4900
-Wire Wire Line
-	3100 4900 3100 4950
-Wire Wire Line
-	3100 4950 2750 4950
-Wire Wire Line
-	3600 4700 2850 4700
-Wire Wire Line
-	2850 4700 2850 5150
-Wire Wire Line
-	2850 5150 2750 5150
+usb-relay-atmega328p-THT
 Wire Wire Line
 	5550 6200 6400 6200
 Wire Wire Line
@@ -609,164 +499,301 @@ Wire Wire Line
 Connection ~ 5750 5250
 Connection ~ 5750 6600
 Wire Wire Line
-	5750 6600 2150 6600
+	750  4250 750  6600
 Wire Wire Line
-	6900 1300 6900 1500
+	750  6600 1850 6600
 Wire Wire Line
-	6900 600  6900 750 
+	4900 5350 4900 3200
 Wire Wire Line
-	9550 1050 9900 1050
+	4900 3200 2950 3200
 Wire Wire Line
-	9900 1050 9900 750 
+	2950 3200 2950 2950
 Wire Wire Line
-	9900 750  6900 750 
-Connection ~ 6900 750 
+	2950 2950 2350 2950
 Wire Wire Line
-	6900 750  6900 1000
+	4750 3100 2350 3100
 Wire Wire Line
-	8250 1050 7400 1050
-Wire Wire Line
-	7400 1050 7400 1500
-Wire Wire Line
-	7400 1500 6900 1500
-Connection ~ 6900 1500
-Wire Wire Line
-	6900 1500 6900 1800
-Wire Wire Line
-	8250 1250 8250 1700
-Wire Wire Line
-	8250 1700 9800 1700
-Wire Wire Line
-	9800 1700 9800 1250
-Wire Wire Line
-	9800 1150 9550 1150
-Wire Wire Line
-	6700 2950 6700 3050
+	2350 3100 2350 3050
+Text Label 2000 2950 0    50   ~ 0
+TX
+Text Label 2000 3050 0    50   ~ 0
+RX
 $Comp
-L Connector:Screw_Terminal_01x02 J2
-U 1 1 6050B345
-P 10000 2650
-F 0 "J2" H 10080 2642 50  0000 L CNN
-F 1 "Screw_Terminal_01x02" H 10080 2551 50  0000 L CNN
-F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10000 2650 50  0001 C CNN
-F 3 "~" H 10000 2650 50  0001 C CNN
-	1    10000 2650
+L Device:Crystal Y2
+U 1 1 6069FCFD
+P 1900 5400
+F 0 "Y2" H 1900 5668 50  0000 C CNN
+F 1 "Crystal-16MHz" H 1900 5577 50  0000 C CNN
+F 2 "Crystal:Crystal_HC49-4H_Vertical" H 1900 5400 50  0001 C CNN
+F 3 "~" H 1900 5400 50  0001 C CNN
+	1    1900 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C5
+U 1 1 606A3350
+P 1450 5650
+F 0 "C5" H 1542 5696 50  0000 L CNN
+F 1 "22pF" H 1542 5605 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm" H 1450 5650 50  0001 C CNN
+F 3 "~" H 1450 5650 50  0001 C CNN
+	1    1450 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C4
+U 1 1 606A8D1A
+P 2250 5650
+F 0 "C4" H 2342 5696 50  0000 L CNN
+F 1 "22pF" H 2342 5605 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm" H 2250 5650 50  0001 C CNN
+F 3 "~" H 2250 5650 50  0001 C CNN
+	1    2250 5650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
+	2250 5750 2250 6000
+Wire Wire Line
+	2250 6000 1850 6000
+Wire Wire Line
+	1450 6000 1450 5750
+Wire Wire Line
+	1850 6000 1850 6600
+Connection ~ 1850 6000
+Wire Wire Line
+	1850 6000 1450 6000
+Connection ~ 1850 6600
+Wire Wire Line
+	1850 6600 3550 6600
+Wire Wire Line
+	2050 5400 2250 5400
+Wire Wire Line
+	2250 5400 2250 5550
+Wire Wire Line
+	1750 5400 1450 5400
+Wire Wire Line
+	1450 5400 1450 5550
+Wire Wire Line
+	4750 5450 4750 3100
+Wire Wire Line
+	2850 2850 2850 4250
+$Comp
+L MCU_Microchip_ATmega:ATmega328P-PU U1
+U 1 1 6065D461
+P 3550 4850
+F 0 "U1" H 2906 4896 50  0000 R CNN
+F 1 "ATmega328P-PU" H 2906 4805 50  0000 R CNN
+F 2 "Package_DIP:DIP-28_W7.62mm" H 3550 4850 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 3550 4850 50  0001 C CNN
+	1    3550 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 5350 4900 5350
+Wire Wire Line
+	4150 5450 4750 5450
+Wire Wire Line
+	3550 6350 3550 6600
+Connection ~ 3550 6600
+Wire Wire Line
+	3550 3350 3550 3000
+Wire Wire Line
+	3550 3000 3750 3000
+Wire Wire Line
+	3750 3000 3750 2350
+Connection ~ 3750 2350
+Wire Wire Line
+	3550 6600 5750 6600
+Wire Wire Line
+	4150 4250 4450 4250
+Wire Wire Line
+	2850 5400 2250 5400
+Connection ~ 2250 5400
+Wire Wire Line
+	4150 4350 4350 4350
+Wire Wire Line
+	1200 5400 1450 5400
+Connection ~ 1450 5400
+Wire Wire Line
+	5450 2000 4650 2000
+Wire Wire Line
+	4650 2000 4650 4850
+Wire Wire Line
+	4650 4850 4150 4850
+Wire Wire Line
+	4550 3450 4550 4750
+Wire Wire Line
+	4550 4750 4150 4750
+Wire Wire Line
+	4550 3450 5250 3450
+Wire Wire Line
+	4150 4650 5250 4650
+Wire Wire Line
+	5250 4650 5250 4850
+Wire Wire Line
+	4150 4550 5000 4550
+Wire Wire Line
+	5000 4550 5000 6200
+Wire Wire Line
+	5000 6200 5250 6200
+Wire Wire Line
+	4350 6550 1200 6550
+Wire Wire Line
+	4350 4350 4350 6550
+Wire Wire Line
+	1200 5400 1200 6550
+Wire Wire Line
+	2850 5400 2850 6450
+Wire Wire Line
+	2850 6450 4450 6450
+Wire Wire Line
+	4450 4250 4450 6450
+Wire Wire Line
+	2400 1950 3750 1950
+Wire Wire Line
+	750  1900 1400 1900
+Wire Wire Line
+	6900 600  6900 900 
+Wire Wire Line
+	6900 1300 6900 1450
+Wire Wire Line
+	9550 1050 10000 1050
+Wire Wire Line
+	10000 1050 10000 700 
+Wire Wire Line
+	10000 700  7500 700 
+Wire Wire Line
+	7500 700  7500 900 
+Wire Wire Line
+	7500 900  6900 900 
+Connection ~ 6900 900 
+Wire Wire Line
+	6900 900  6900 1000
+Wire Wire Line
+	8250 1050 7750 1050
+Wire Wire Line
+	7750 1050 7750 1450
+Wire Wire Line
+	7750 1450 6900 1450
+Connection ~ 6900 1450
+Wire Wire Line
+	6900 1450 6900 1800
+Wire Wire Line
+	8250 1250 8250 1700
+Wire Wire Line
+	8250 1700 9900 1700
+Wire Wire Line
+	9900 1700 9900 1250
+Wire Wire Line
+	9900 1150 9550 1150
+Wire Wire Line
+	6700 2950 6700 3100
+Wire Wire Line
 	9400 2550 9700 2550
 Wire Wire Line
-	9700 2550 9700 2100
+	9700 2550 9700 2250
 Wire Wire Line
-	9700 2100 7550 2100
+	9700 2250 7200 2250
 Wire Wire Line
-	7550 2100 7550 2550
+	7200 2250 7200 2600
 Wire Wire Line
-	7550 2550 6700 2550
-Connection ~ 6700 2550
+	7200 2600 6700 2600
+Connection ~ 6700 2600
 Wire Wire Line
-	8100 2550 7700 2550
+	6700 2600 6700 2650
 Wire Wire Line
-	7700 2550 7700 3050
+	8100 2550 7450 2550
 Wire Wire Line
-	7700 3050 6700 3050
-Connection ~ 6700 3050
+	7450 2550 7450 3100
 Wire Wire Line
-	6700 3050 6700 3250
+	7450 3100 6700 3100
+Connection ~ 6700 3100
 Wire Wire Line
-	8100 2750 8100 3100
+	6700 3100 6700 3250
 Wire Wire Line
-	8100 3100 9800 3100
+	8100 2750 7800 2750
 Wire Wire Line
-	9800 3100 9800 2750
+	7800 2750 7800 3050
 Wire Wire Line
-	9800 2650 9400 2650
+	7800 3050 9700 3050
+Wire Wire Line
+	9700 3050 9700 2750
+Wire Wire Line
+	9700 2650 9400 2650
 Wire Wire Line
 	6700 4350 6700 4450
 Wire Wire Line
-	9400 3950 9600 3950
+	9400 3950 9700 3950
 Wire Wire Line
-	9600 3950 9600 3600
+	9700 3950 9700 3450
 Wire Wire Line
-	9600 3600 7250 3600
+	9700 3450 7600 3450
 Wire Wire Line
-	7250 3600 7250 3950
+	7600 3450 7600 3950
 Wire Wire Line
-	7250 3950 6700 3950
+	7600 3950 6700 3950
 Connection ~ 6700 3950
 Wire Wire Line
-	8100 3950 7400 3950
+	8100 3950 7700 3950
 Wire Wire Line
-	7400 3950 7400 4450
+	7700 3950 7700 4450
 Wire Wire Line
-	7400 4450 6700 4450
+	7700 4450 6700 4450
 Connection ~ 6700 4450
 Wire Wire Line
 	6700 4450 6700 4650
 Wire Wire Line
-	8100 4150 7850 4150
+	8100 4150 8100 4700
 Wire Wire Line
-	7850 4150 7850 4400
+	8100 4700 9700 4700
 Wire Wire Line
-	7850 4400 9700 4400
-Wire Wire Line
-	9700 4400 9700 4150
+	9700 4700 9700 4150
 Wire Wire Line
 	9700 4050 9400 4050
 Wire Wire Line
-	6700 5700 6700 5850
+	6700 5700 6700 5800
 Wire Wire Line
-	8100 5300 7350 5300
+	9400 5300 9700 5300
 Wire Wire Line
-	7350 5300 7350 5850
+	9700 5300 9700 4900
 Wire Wire Line
-	7350 5850 6700 5850
-Connection ~ 6700 5850
+	9700 4900 7350 4900
 Wire Wire Line
-	6700 5850 6700 6000
+	7350 4900 7350 5300
 Wire Wire Line
-	9400 5300 9600 5300
-Wire Wire Line
-	9600 5300 9600 4900
-Wire Wire Line
-	9600 4900 7150 4900
-Wire Wire Line
-	7150 4900 7150 5300
-Wire Wire Line
-	7150 5300 6700 5300
+	7350 5300 6700 5300
 Connection ~ 6700 5300
 Wire Wire Line
+	8100 5300 7500 5300
+Wire Wire Line
+	7500 5300 7500 5800
+Wire Wire Line
+	7500 5800 6700 5800
+Connection ~ 6700 5800
+Wire Wire Line
+	6700 5800 6700 6000
+Wire Wire Line
+	8100 5500 7950 5500
+Wire Wire Line
+	7950 5500 7950 5900
+Wire Wire Line
+	7950 5900 9750 5900
+Wire Wire Line
+	9750 5900 9750 5500
+Wire Wire Line
 	9750 5400 9400 5400
-Wire Wire Line
-	8100 5500 7850 5500
-Wire Wire Line
-	7850 5500 7850 5800
-Wire Wire Line
-	7850 5800 9750 5800
-Wire Wire Line
-	9750 5800 9750 5500
-Text Label 1900 2850 0    50   ~ 0
+Text Label 1950 2850 0    50   ~ 0
 GND
-Text Label 1950 2950 0    50   ~ 0
-TX
-Text Label 1950 3050 0    50   ~ 0
-RX
-Text Label 1950 3150 0    50   ~ 0
+Text Label 2000 3150 0    50   ~ 0
 V3
-Text Label 1950 3250 0    50   ~ 0
+Text Label 2000 3250 0    50   ~ 0
 D+
-Text Label 1950 3350 0    50   ~ 0
+Text Label 2000 3350 0    50   ~ 0
 D-
-Text Label 1950 3450 0    50   ~ 0
+Text Label 2000 3450 0    50   ~ 0
 XI
-Text Label 1950 3550 0    50   ~ 0
+Text Label 2000 3550 0    50   ~ 0
 XO
-Wire Wire Line
-	1550 3500 1800 3500
-Wire Wire Line
-	1800 3500 1800 3800
-Wire Wire Line
-	1800 3800 2650 3800
-Text Label 3050 2350 0    50   ~ 0
+Text Label 3000 2350 0    50   ~ 0
 VCC
 $EndSCHEMATC
