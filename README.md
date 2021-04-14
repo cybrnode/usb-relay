@@ -5,7 +5,7 @@
 |                       |                     | 
 | --------------------- | ------------------- |
 | Project Starting Date | Feb 12, 2021 Friday |
-| Project Ending Date   | In progress         |
+| Project Ending Date   | Mar 23, 2021 Tuesday |
 | Objective             | Make a USB controlled Relay with variable no. of relays on Single Board|
 | Micro Controller      | Arduino Nano        |
 | IDE                   | [Platform IO](https://platformio.org/)|
