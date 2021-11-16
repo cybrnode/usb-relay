@@ -19,9 +19,3 @@ USB-RELAY could be operated using serial commands. This device is designed to en
 1. WireBoard
 2. T-Block (Tri) * 2
 3. Solder + Soldering wire
-
-### Varients
-
-See the varients info in their respective branches
-
-main -> varient-1:arduino-name
